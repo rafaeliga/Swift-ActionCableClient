@@ -97,8 +97,8 @@ internal class JSONSerializer {
                     throw SerializationError.protocolViolation
                 }
                 
-                if let item = idJSON.first {
-                    channelIdentifier = item.value as? String
+                if let item = idJSON["identifier"] {
+                    channelIdentifier = item as? String
                 }
                 
                 if let nameStr = idJSON["channel"], let name = nameStr as? String {
